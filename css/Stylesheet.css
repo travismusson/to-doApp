@@ -1,7 +1,95 @@
+* {-webkit-font-smoothing: antialiased;}			/* Potential chrome fix, with styling */
+
 body {
 	margin:0;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 1.2rem;
+	font-family: Monaco;
+	font-size: 1.5rem;
+	background-color:#708090;
+	color:#FFFAFA;
 	
+	display : grid;
+	
+	
+	grid :
+			"header header header header" auto 
+			"...... lists active ......" auto /
+			1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+
+}
+
+h2{	/*Title Customization*/
+		color:#00FFFF;
+}
+
+/*Placeholder for form customization */
+::placeholder {				/*made more visible without focus*/
+	color:#2F4F4F;
+	opacity:1;
+	transition:opacity 25ms ease-in-out;		/*Created for visual easing*/
+}
+.newList:focus::placeholder{		/*when focused, text made lighter */
+	opacity:0.25;		
+}
+.newTask:focus::placeholder{		/*when focused, text made lighter */
+	opacity:0.25;
+}
+/*end of placeholder customization*/
+
+.title{
+	grid-area: header;
+	text-align:center;
+	font-size: calc(5vw + 2rem);		/* Ensures appropraite sizing with bigger and smaller screens. */
+	font-weight: bold;
+	color:#FFFAFA;
+}
+
+.title span{
+
+	color:#00FFFF;
+}
+
+/*Start of List Customization*/
+.all_lists{
+	grid-area: lists;
+	margin-left: 1.1em;
+}
+
+.tList{
+	line-height:1.5;
+	padding: 1.25rem;
+	font-size: 1.3rem;
+	list-style:circle;
+}
+
+.newList {
+	background: transparent;
+	border: 0;
+	color:#FFFAFA;
+	border-bottom : 1px solid currentColor;
+	transition:border-bottom 300ms ease-in;
+	
+	
+}
+
+.activeList{
+	letter-spacing:0.8px;
+	font-weight:bold;
+}
+/*End of List Customization*/
+
+/*Start of Task Customization*/
+.todo_tasks{
+	grid-area: active;
+	margin-left: 4em;
+	
+}
+
+
+.newTask {
+	background: transparent;
+	border: 0;
+	color:#FFFAFA;
+	border-bottom : 1px solid currentColor;
+	transition:border-bottom 300ms ease-in;
 	
 }
