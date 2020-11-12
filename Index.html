@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="css/Stylesheet.css">
 
     <title>Task Application</title>
+
 </head>
 
 
@@ -17,7 +18,7 @@
 
 <div class = "all_lists">
 	<!-- Using a List for task listing-->
-	<h2 class = "tList_title">My Lists</h3>
+	<h2 class = "list_title">My Lists</h3>
 	
 	<section class = "hamOptions">			<!-- Using hamburger menu for editing lists, removing them, and sorting alphabetically. -->
 	
@@ -34,9 +35,9 @@
 		
 	</section>
 		<ul class="tList">		
-			<li class = "activeList">Testing This</li>	<!-- Creating an active list class, keeping track of current list in use, usually going to be placed on the first list-->
-			<li>Testing This</li>
-			<li>Testing This</li>	
+			<li class = "list_name activeList">Testing This</li>	<!-- Creating an active list class, keeping track of current list in use, usually going to be placed on the first list -->
+			<li class="list_name">Testing This</li>					<!-- Added list name to customize interacterbility and future javascript customization -->
+			<li class="list_name">Testing This</li>	
 		</ul>
 		
 	<!-- Going to be using a form to add Lists -->
@@ -57,7 +58,7 @@
 	<div class = "todo_tasks">
 		<div class ="todo_header">
 			<h2 class = "todo_title">My Tasks</h2>
-				
+			<p class="current_list">Lorem Ipsum</p>	
 		</div>
 
 		
@@ -80,7 +81,7 @@
 						<label for = "task_2">
 							<span class ="cusCheckbox">
 							</span>
-								Testing this stuff
+								Lorem Ipsum
 
 						</label>
 				</div>
@@ -91,7 +92,7 @@
 						<label for = "task_3">
 							<span class ="cusCheckbox">
 							</span>
-								Testing this stuff
+								Lorem IpsumLorem
 
 						</label>
 				</div>

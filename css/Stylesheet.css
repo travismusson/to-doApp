@@ -41,6 +41,7 @@ h2{	/*Title Customization*/
 	font-size:1.6rem;
 	font-weight:bold;
 	margin-left:0.2rem;
+	color:#00FFFF;
 }
 
 .btn.List:hover {
@@ -81,14 +82,20 @@ h2{	/*Title Customization*/
 }
 
 /*Start of List Customization*/
+.list_title{
+	margin:0;
+	padding:2rem;
+}
+
 .all_lists{
 	grid-area: lists;
-	margin-left: 1.1em;
+	margin-left: 1em;
+
 }
 
 .tList{
 	line-height:1.5;
-	padding: 1.25rem;
+	padding: 2rem;
 	font-size: 1.25rem;
 	list-style:circle;
 }
@@ -107,26 +114,126 @@ h2{	/*Title Customization*/
 	letter-spacing:0.8px;
 	font-weight:bold;
 }
+.list_name{
+	cursor:pointer;
+	
+}
+.list_name:hover{
+	opacity:0.25;
+	transition:opacity 150ms ease-in-out;
+}
+
 /*End of List Customization*/
 
 /*Start of Task Customization*/
+.todo_header{
+	background-color:#A9A9A9;
+	display:flex;
+	align-items: center;
+	justify-content:space-bewteen;		/*Defines how browser distributes space between and around content*/
+	
+}
+.todo_title{
+	margin:0;
+	color:#FFFAFA;
+	padding:2rem;
+}
+.current_list{
+	margin:0 10px 0 0;
+	font-size:1rem;
+}
+
+
 .todo_tasks{
 	grid-area: active;
 	margin-left: 4em;
+	background-color:#FFFAFA;
+	color:#2F4F4F;
 }
 
 .todo_body{
 	line-height:1.5;
-	padding: 1.25rem;
+	padding: 1rem;
 	font-size: 1.55rem;
-
+	
 }
+[type="checkbox"]{		/*  Selects all checkboxes within the application */
+	opacity:0;		/*use this to hide*/
+	position:absolute;
+}
+
+[type="checkbox"]:checked +label .cusCheckbox{		/*Checks to see whether the checkbox and label is clicked*/
+	background:#00FFFF;	/*Fills the custom checbox with this color, i think this works really well and looks really good.*/
+}
+[type="checkbox"]:checked +label{ /*changes the label of the custom checkbox*/
+	opacity:0.5;
+}
+
+
+.cusCheckbox {		/*Creating the custom checkbox*/
+	display:inline-block;
+	width:0.75em;
+	height:0.75em;
+	cursor:pointer;
+	border: 2px solid currentColor;
+	border-radius: 50%;
+	margin:0 0.75em 0 0;
+	transform:scale(1);
+	transition: transform 150ms ease-in-out;
+}
+
+.tasks label {
+	display:inline-flex;
+	align-items:center;
+	margin:0 0 1.35em 0;
+	position:relative;
+	cursor:pointer;
+	
+}
+
+
+
+.tasks{
+	position:relative;
+}
+
+.tasks:hover .cusCheckbox{
+	transform:scale(1.2);		/*Creates visual presentation that every task is clickable.*/
+	color:#00FFFF;
+	transition:color 200ms ease-in;
+}
+
 
 .newTask {
 	background: transparent;
 	border: 0;
-	color:#FFFAFA;
+	color:#00FFFF;
 	border-bottom : 1px solid currentColor;
 	transition:border-bottom 300ms ease-in;
 	font-size: 1.5rem;
+	margin:-2em 0 0 2em;
+
 }
+.newTask::placeholder {
+	color:#D3D3D3;
+	
+}
+
+.tasks label::after{
+	content:"";
+	position:absolute;
+	right:0;
+	left:1.5em;
+	height:3px;
+	background:currentColor;
+	top:50%;
+	transform:scale(0);
+	transition:transform 200ms ease-in-out;
+}
+
+[type="checkbox"]:checked +label::after{ /*changes the label of the custom checkbox*/
+	transform:scale(1);
+
+}
+
+/*End of Task Customization*/
