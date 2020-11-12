@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<!-- Meta Tags -->
 	<meta charset="Utf-8">
 	<meta name="viewport" content="width=device-width, intial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
@@ -10,15 +11,20 @@
 
 
 <body>
+	<!-- List section -->
 	<h1 class = "title">Tasks List</h1>
 	
+	
 	<div class = "all_tasks">
+	<!-- Using a List for task listing-->
 		<h2 class = "tList_title">My Lists</h3>
 		<ul class="tList">
-			<li class = "activeList">Keep</li>
+			<li class = "activeList">Keep</li>	<!-- Creating an active list class, keeping track of current list in use, usually going to be placed on the first list-->
 			<li>Calm</li>
 			<li>You have Time</li>	
 		</ul>
+		
+	<!-- Going to be using a form to add and remove Tasks -->
 	<form action="">
 	<input type="text" class = "newList" placeholder="New List Name" />
 	<button class = "btnList">+</button>
@@ -32,7 +38,7 @@
 	
 	
 	</div>
-	
+	<!-- The todo list will be using divs to controll appearnce and keep track of any additions-->
 	<div class = "todo_list">
 		<div class ="todo_header">
 			<h2 class = "todo_title">Keep</h2>
@@ -41,6 +47,7 @@
 		
 		<div class = "todo_body">
 			<div class ="ActiveTask">
+			<!-- 1st Task -->					<!-- Temporary static tasks, eventaully will do more research and convert to automated tasks-->
 				<div class="tasks">
 					<input id="task_1"type="checkbox"/>
 						<label for = "task_1">
@@ -49,8 +56,30 @@
 								Testing this stuff
 
 						</label>
-				
 				</div>
+				
+			<!-- 2nd Task -->
+				<div class="tasks">
+					<input id="task_2"type="checkbox"/>
+						<label for = "task_2">
+							<span class ="cusCheckbox">
+							</span>
+								Testing this stuff
+
+						</label>
+				</div>
+					
+			<!-- 3rd Task -->
+				<div class="tasks">
+					<input id="task_3"type="checkbox"/>
+						<label for = "task_3">
+							<span class ="cusCheckbox">
+							</span>
+								Testing this stuff
+
+						</label>
+				</div>
+					
 			
 			
 			</div>
