@@ -22,6 +22,10 @@ h2{	/*Title Customization*/
 		font-size: 2.5rem;
 }
 
+
+
+
+
 /*Start of Button Customization*/
 .btn{
 	cursor : pointer;
@@ -52,7 +56,67 @@ h2{	/*Title Customization*/
 	opacity:0.25;
 	transition:opacity 200ms ease-in-out;
 }
+
+/*Buttons under List Controller*/
+.contrList{
+	display:flex;
+	justify-content:space-evenly;	/*distributes space between items evenly*/
+	margin: 0 0 25px -80px;
+	left:0;
+}
+.btn.delList{
+	font-weight:700;
+}
+.btn.delList:hover{
+	opacity:0.5;
+	transition:opacity 200ms ease-in-out;
+}
+
+.btn.edtList{
+	font-weight:700;
+}
+.btn.edtList:hover{
+	opacity:0.5;
+	transition:opacity 200ms ease-in-out;
+}
+
+/*Buttons under Task controller*/
+.contrTask{
+	display:flex;
+	justify-content:space-evenly;	/*distributes space between items evenly*/
+	margin: 0 0 25px -20px;
+	left:0;
+}
+
+.btn.delTask{
+	font-weight:700;
+}
+.btn.delTask:hover{
+	opacity:0.5;
+	transition:opacity 200ms ease-in-out;
+}
+
+.btn.edtTask{
+	font-weight:700;
+}
+.btn.edtTask:hover{
+	opacity:0.5;
+	transition:opacity 200ms ease-in-out;
+}
+
+.btn.sortTask{
+	font-weight:700;
+}
+.btn.sortTask:hover{
+	opacity:0.5;
+	transition:opacity 200ms ease-in-out;
+}
+
 /*End of Button Customization*/
+
+
+
+
 
 /*Placeholder for form customization */
 ::placeholder {				/*made more visible without focus*/
@@ -68,6 +132,9 @@ h2{	/*Title Customization*/
 }
 /*end of placeholder customization*/
 
+
+
+/*Start of title Customization*/
 .title{
 	grid-area: header;
 	text-align:center;
@@ -80,6 +147,10 @@ h2{	/*Title Customization*/
 	
 	color:#00FFFF;
 }
+/*End of Title Customization*/
+
+
+
 
 /*Start of List Customization*/
 .list_title{
@@ -89,7 +160,7 @@ h2{	/*Title Customization*/
 
 .all_lists{
 	grid-area: lists;
-	margin-left: 1em;
+	margin-left: 0;
 
 }
 
@@ -107,6 +178,7 @@ h2{	/*Title Customization*/
 	color:#FFFAFA;
 	border-bottom : 1px solid currentColor;
 	transition:border-bottom 300ms ease-in;
+	padding:0.1em;
 	
 }
 
@@ -124,6 +196,10 @@ h2{	/*Title Customization*/
 }
 
 /*End of List Customization*/
+
+
+
+
 
 /*Start of Task Customization*/
 .todo_header{
@@ -143,7 +219,6 @@ h2{	/*Title Customization*/
 	font-size:1rem;
 }
 
-
 .todo_tasks{
 	grid-area: active;
 	margin-left: 4em;
@@ -155,6 +230,7 @@ h2{	/*Title Customization*/
 	line-height:1.5;
 	padding: 1rem;
 	font-size: 1.55rem;
+	position:relative;
 	
 }
 [type="checkbox"]{		/*  Selects all checkboxes within the application */
@@ -212,6 +288,7 @@ h2{	/*Title Customization*/
 	transition:border-bottom 300ms ease-in;
 	font-size: 1.5rem;
 	margin:-2em 0 0 2em;
+	padding:0.1em;
 
 }
 .newTask::placeholder {

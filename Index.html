@@ -5,7 +5,9 @@
 	<meta charset="Utf-8">
 	<meta name="viewport" content="width=device-width, intial-scale=1">
 	<link rel="stylesheet" type="text/css" href="css/Stylesheet.css">
-
+	<!-- Fontawesome burger icon-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" >
+	
     <title>Task Application</title>
 
 </head>
@@ -18,22 +20,8 @@
 
 <div class = "all_lists">
 	<!-- Using a List for task listing-->
-	<h2 class = "list_title">My Lists</h3>
+	<h2 class = "list_title">My Lists</h2>
 	
-	<section class = "hamOptions">			<!-- Using hamburger menu for editing lists, removing them, and sorting alphabetically. -->
-	
-		<div class ="deleteList">
-			<button class="btn DelList">Delete List</button>
-		</div>
-		
-		<div class ="editList">
-			<button class="btn EditList">Edit List</button>
-		</div>
-		<div class ="sortTasks">						<!-- can use JS to sort the list when sort button is clicked -->
-			<button class="btn SortTasks">Sort Tasks Alphabetically</button>
-		</div>		
-		
-	</section>
 		<ul class="tList">		
 			<li class = "list_name activeList">Testing This</li>	<!-- Creating an active list class, keeping track of current list in use, usually going to be placed on the first list -->
 			<li class="list_name">Testing This</li>					<!-- Added list name to customize interacterbility and future javascript customization -->
@@ -44,15 +32,19 @@
 
 	<form action="">
 		<input type="text" class = "newList" placeholder="New List Name" />
-		
-	<button class = "btn List">+</button>
-	
+		<button class = "btn List">+</button>
 	</form>
 	
-	
-	
-	
-	
+		<div class="contrList">
+			<div class ="deleteList">
+				<button class="btn delList">Delete List</button>
+			</div>
+		
+			<div class ="editList">
+				<button class="btn edtList">Edit List</button>
+			</div>
+	</div>
+
 	</div>
 	<!-- The todo list will be using divs to controll appearnce and keep track of any additions-->
 	<div class = "todo_tasks">
@@ -106,12 +98,17 @@
 				<input type="text" class = "newTask" placeholder="New Task Name" />
 				<button class = "btn Task">+</button>
 			</form>
-				
-			<div class ="deleteTask">
-				<button class="btn DelTask">Clear Finished Tasks</button>
-			</div>
-			<div class ="editTask"> 
-				<button class ="btn EditTask">Edit Tasks</button>
+			
+			<div class="contrTask">
+				<div class ="deleteTask">
+					<button class="btn delTask">Clear Finished Tasks</button>
+				</div>
+				<div class ="editTask"> 
+					<button class ="btn edtTask">Edit Tasks</button>
+				</div>
+				<div class ="sortTasks">						<!-- can use JS to sort the list when sort button is clicked -->
+					<button class="btn sortTask">Sort Alphabetically</button>
+				</div>	
 			</div>
 	</div>
 	
