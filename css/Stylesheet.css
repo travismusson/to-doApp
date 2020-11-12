@@ -2,7 +2,7 @@
 
 body {
 	margin:0;
-	font-family: Monaco;
+	font-family: Verdana;
 	font-size: 1.5rem;
 	background-color:#708090;
 	color:#FFFAFA;
@@ -11,21 +11,53 @@ body {
 	
 	
 	grid :
-			"header header header header" auto 
-			"...... lists active ......" auto /
-			1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;
+			"header header header header" auto 				/*Using a grid layout for advanced positioning, for rows and columns*/
+			"...... lists active ......" auto /			
+			1fr minmax(100px, 300px) minmax(250px, 500px) 1fr;			
 
 }
 
 h2{	/*Title Customization*/
 		color:#00FFFF;
+		font-size: 2.5rem;
 }
+
+/*Start of Button Customization*/
+.btn{
+	cursor : pointer;
+	background:0;
+	border:0;
+	padding:0;
+	color:inherit;
+}
+
+.btn.List {
+	font-size: 1.3rem;			/*Slightly bigger than the text in the list area, allows for a more of a visual pop*/
+	font-weight:bold;
+	margin-left:0.2rem;
+}
+
+.btn.Task {
+	font-size:1.6rem;
+	font-weight:bold;
+	margin-left:0.2rem;
+}
+
+.btn.List:hover {
+	opacity:0.25;
+	transition:opacity 200ms ease-in-out;		/*Added for visual appeal*/
+}
+.btn.Task:hover {
+	opacity:0.25;
+	transition:opacity 200ms ease-in-out;
+}
+/*End of Button Customization*/
 
 /*Placeholder for form customization */
 ::placeholder {				/*made more visible without focus*/
 	color:#2F4F4F;
 	opacity:1;
-	transition:opacity 25ms ease-in-out;		/*Created for visual easing*/
+	transition:opacity 250ms ease-in-out;		/*Created for visual easing*/
 }
 .newList:focus::placeholder{		/*when focused, text made lighter */
 	opacity:0.25;		
@@ -44,7 +76,7 @@ h2{	/*Title Customization*/
 }
 
 .title span{
-
+	
 	color:#00FFFF;
 }
 
@@ -57,17 +89,17 @@ h2{	/*Title Customization*/
 .tList{
 	line-height:1.5;
 	padding: 1.25rem;
-	font-size: 1.3rem;
+	font-size: 1.25rem;
 	list-style:circle;
 }
 
 .newList {
 	background: transparent;
 	border: 0;
+	font-size: 1.2rem;
 	color:#FFFAFA;
 	border-bottom : 1px solid currentColor;
 	transition:border-bottom 300ms ease-in;
-	
 	
 }
 
@@ -81,9 +113,14 @@ h2{	/*Title Customization*/
 .todo_tasks{
 	grid-area: active;
 	margin-left: 4em;
-	
 }
 
+.todo_body{
+	line-height:1.5;
+	padding: 1.25rem;
+	font-size: 1.55rem;
+
+}
 
 .newTask {
 	background: transparent;
@@ -91,5 +128,5 @@ h2{	/*Title Customization*/
 	color:#FFFAFA;
 	border-bottom : 1px solid currentColor;
 	transition:border-bottom 300ms ease-in;
-	
+	font-size: 1.5rem;
 }
