@@ -21,7 +21,7 @@
 	<!-- Using a List for task listing-->
 	<h2 class = "list_title">My Lists</h2>
 	
-		<ul class="tList" dataLists>		
+		<ul class="tList" data_lists>		
 			<!--<li class = "list_name activeList">Testing This</li>	<!-- Creating an active list class, keeping track of current list in use, usually going to be placed on the first list -->
 			<!--<li class="list_name">Testing This</li>					<!-- Added list name to customize interacterbility and future javascript customization -->
 			<!--<li class="list_name">Testing This</li>	-->
@@ -29,19 +29,19 @@
 		
 	<!-- Going to be using a form to add Lists -->
 
-	<form action="">
-		<input type="text" class = "newList" placeholder="New List Name" />
-		<button class = "btn List">+</button>
+	<form action="" data_new_list_form>		<!-- Created to be able to add lists -->
+		<input type="text" class = "newList" placeholder="New List Name" data_new_list_input/>
+		<button class = "btn List" >+</button>
 	</form>
 	
-		<div class="contrList">
-			<div class ="deleteList">
-				<button class="btn delList">Delete List</button>
-			</div>
+	<div class="contrList">
+		<div class ="deleteList">
+			<button class="btn delList">Delete List</button>
+		</div>
 		
-			<div class ="editList">
-				<button class="btn edtList">Edit List</button>
-			</div>
+		<div class ="editList">
+			<button class="btn edtList">Edit List</button>
+		</div>
 	</div>
 
 	</div>
