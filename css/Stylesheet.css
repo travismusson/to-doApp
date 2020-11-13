@@ -272,6 +272,7 @@ h2{	/*Title Customization*/
 
 .tasks{
 	position:relative;
+	margin-bottom:1.3em;
 }
 
 .tasks:hover .cusCheckbox{

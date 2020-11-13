@@ -77,7 +77,7 @@ newTaskForm.addEventListener('submit', e => {
 	e.preventDefault();	//prevents form from refreshing page
 	const taskName  = newTaskInput.value;		//check list name from input element
 	if (taskName == null || taskName === ''){
-		alert("List Cannot be empty!");				//if taskName is being passed as null OR a blank string then return to input
+		alert("List Cannot be empty!")			//if taskName is being passed as null OR a blank string then return to input
 	}
 	else{
 		const task = createTask(taskName);
@@ -120,7 +120,7 @@ function createList(name){
 	 return { id: Date.now().toString(), name: name, tasks: [{}] }
 }
 function createTask(name){
-	 return { id: Date.now().toString(), name: name, complete: false [{}] }
+    return { id: Date.now().toString(), name: name, complete: false }
 }
 
 function saveandrender(){
@@ -154,7 +154,7 @@ function render() {			//creates lists for use
 
 function renderTasks(selectedList){
 	selectedList.tasks.forEach(task => {
-		const taskElement = document.importNode(taskTemplate.content, true);
+        const taskElement = document.importNode(taskTemplate.content, true);
 		const checkbox = taskElement.querySelector('input');
 		checkbox.id = task.id;
 		checkbox.checked = task.complete;
