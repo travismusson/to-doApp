@@ -11,6 +11,9 @@ const tasksContainer = document.querySelector('[data_tasks]');
 const taskTemplate = document.getElementById('task_template');
 const newTaskForm = document.querySelector('[data_new_task_form]');
 const newTaskInput = document.querySelector('[data_new_task_input]');
+const clearTasksButton = document.querySelector('[data_clear_task]');
+const editTasksButton = document.querySelector('[data_edit_task]');  //currently not working.
+const sortTaskButton = document.querySelector('[data_sort_task]');
 
 //Start of JSON declaration
 const LOCAL_STORAGE_LIST_KEY = 'task.lists';	//using local storage to store information locally, making use of namespacing
@@ -55,6 +58,32 @@ newListForm.addEventListener('submit', e => {
 	}
 })
 
+clearTasksButton.addEventListener('click', e => {
+    const selectedList = lists.find(list => list.id === selectedListId);            //finds the selected list
+    selectedList.tasks = selectedList.tasks.filter(task => !task.complete);         //take selected list and overides the task and filters the tasks that arnt complete
+    saveandrender();
+})
+
+/*editTasksButton.addEventListener('click', e => {
+    const taskName = newTaskInput.value;		//check list name from input element
+    if (taskName == null || taskName === '') {
+        alert("Task Cannot be empty!")			//if taskName is being passed as null OR a blank string then return to input
+    }
+    else {
+        const task = editTask(taskName);
+        newTaskInput.value = null;
+        const selectedList = lists.find(list => list.id === selectedListId);
+        selectedList.tasks = selectedList.tasks.push(task)
+    }
+})
+*/
+
+/* sortTaskButton.addEventListener('click', e => {
+    const selectedList = lists.find(list => list.id === selectedListId);        //not working as intended
+    selectedList.tasks.sort();
+})
+*/
+
 deleteListButton.addEventListener('click', e =>{
 	lists = lists.filter(list => list.id !== selectedListId); //give all lists that are not selected
 	selectedListId = null;
@@ -70,20 +99,21 @@ editListButton.addEventListener('click', e =>{
 			alert("Please Select a List to edit!");
 		}
 	})
-	
+
+
 
 
 newTaskForm.addEventListener('submit', e => {
 	e.preventDefault();	//prevents form from refreshing page
 	const taskName  = newTaskInput.value;		//check list name from input element
 	if (taskName == null || taskName === ''){
-		alert("List Cannot be empty!")			//if taskName is being passed as null OR a blank string then return to input
+		alert("Task Cannot be empty!")			//if taskName is being passed as null OR a blank string then return to input
 	}
 	else{
 		const task = createTask(taskName);
 		newTaskInput.value = null;	//restores the placeholder text with default values
 		const selectedList = lists.find(list => list.id === selectedListId);	//ensures selected list gets task
-		selectedList.tasks.push(task);
+        selectedList.tasks.push(task);      
 		saveandrender();
 	}
 })	
@@ -96,32 +126,43 @@ newTaskForm.addEventListener('submit', e => {
 
 
 //Start of Function Declaring
-function editList(){								
-			e.preventDefault()
-			const listName  = newListInput.value;
-				if (selectedListId == null || selectedListId === ''){
-					alert("Please select a list!");								//if listname is being passed as null OR a blank string then return to input
-				}
-				else{
-					if(listName == null || listName=== ''){
-						alert("Please enter a valid list name!");
-					}
-					else{
-						selectedListId.innerHTML = listName;
-						newListInput.value = null;	//restores the placeholder text with default values
-						lists.push(list);
-						saveandrender();
-					}
-				}
+
+function editList() {
+    e.preventDefault()
+    const listName = newListInput.value;
+    if (selectedListId == null || selectedListId === '') {
+        alert("Please select a list!");								//if listname is being passed as null OR a blank string then return to input
+    }
+    else {
+        if (listName == null || listName === '') {
+            alert("Please enter a valid list name!");
+        }
+        else {
+            selectedListId.innerHTML = listName;
+            newListInput.value = null;	//restores the placeholder text with default values
+            lists.push(list);
+            saveandrender();
+        }
+    }
 }
 
 
+
+
+
+/*function editTask(name) {
+    return { id: Date.now().toString(), name: name, complete: false }   
+}*/
+
 function createList(name){
-	 return { id: Date.now().toString(), name: name, tasks: [{}] }
+	 return { id: Date.now().toString(), name: name, tasks: [] }
 }
 function createTask(name){
     return { id: Date.now().toString(), name: name, complete: false }
 }
+
+//function sortTask()
+
 
 function saveandrender(){
 	save();
