@@ -13,6 +13,8 @@ Creating an application that allows users to;
         5.)add different categories in the list section
         
         6.)remove selected lists.
+        
+        7.)edit active task name
 
 Application will rely heavily on css and javascript in order to function correctly.
 
