@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<!-- Meta Tags -->
@@ -22,9 +22,9 @@
 	<h2 class = "list_title">My Lists</h2>
 	
 		<ul class="tList" data_lists>		
-			<!--<li class = "list_name activeList">Testing This</li>	<!-- Creating an active list class, keeping track of current list in use, usually going to be placed on the first list -->
-			<!--<li class="list_name">Testing This</li>					<!-- Added list name to customize interacterbility and future javascript customization -->
-			<!--<li class="list_name">Testing This</li>	-->
+				                                <!-- Creating an active list class, keeping track of current list in use, usually going to be placed on the first list -->
+								                <!-- Added list name to customize interacterbility and future javascript customization -->
+			
 		</ul>
 		
 	<!-- Going to be using a form to add Lists -->
@@ -47,75 +47,48 @@
 
 	</div>
 	<!-- The todo list will be using divs to controll appearnce and keep track of any additions-->
-	<div class = "todo_tasks">
-		<div class ="todo_header">
-			<h2 class = "todo_title">My Tasks</h2>
-			<p class="current_list">Lorem Ipsum</p>	
-		</div>
+<div class="todo_tasks" data_list_display_container>
+    <div class="todo_header">
+        <h2 class="todo_title" data_list_title>My Tasks</h2>
+        <p class="current_list" data_list_current>Lorem Ipsum</p>
+    </div>
 
-		
-		<div class = "todo_body">
-			<div class ="ActiveTask">
-			<!-- 1st Task -->					<!-- Temporary static tasks, eventaully will do more research and convert to automated tasks-->
-				<div class="tasks">
-					<input id="task_1"type="checkbox"/>
-						<label for = "task_1">
-							<span class ="cusCheckbox">
-							</span>
-								Testing this stuff
 
-						</label>
-				</div>
-				
-			<!-- 2nd Task -->
-				<div class="tasks">
-					<input id="task_2"type="checkbox"/>
-						<label for = "task_2">
-							<span class ="cusCheckbox">
-							</span>
-								Lorem Ipsum
+    <div class="todo_body">
+        <div class="tasks" data_tasks></div>
+        <!-- Going to be using a form to add and remove Tasks -->
+        
+        <form action="" data_new_task_form>
+            <input type="text" class="newTask" placeholder="New Task Name" data_new_task_input />
+            <button class="btn Task">+</button>
+        </form>
+        
+        <div class="contrTask">
+            <div class="deleteTask">
+                <button class="btn delTask">Clear Finished Tasks</button>
+            </div>
+            <div class="editTask">
+                <button class="btn edtTask">Edit Tasks</button>
+            </div>
+            <div class="sortTasks">
+                <!-- can use JS to sort the list when sort button is clicked -->
+                <button class="btn sortTask">Sort Alphabetically</button>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- Template Tag doesnt get renderd to html page, can be utilized within javascript for the task creation -->
+            <template id="" task_template>
+                <div class="task">
+                    <input type="checkbox" />
+                    <label>
+                        <span class="cusCheckbox"></span>
 
-						</label>
-				</div>
-					
-			<!-- 3rd Task -->
-				<div class="tasks">
-					<input id="task_3"type="checkbox"/>
-						<label for = "task_3">
-							<span class ="cusCheckbox">
-							</span>
-								Lorem IpsumLorem
+                    </label>
+                </div>
+            </template>
 
-						</label>
-				</div>
-		
-			</div>
-			
-		</div>		<!-- end of task body -->
-		
-			<!-- Going to be using a form to add and remove Tasks -->
-			<form action="">
-				<input type="text" class = "newTask" placeholder="New Task Name" />
-				<button class = "btn Task">+</button>
-			</form>
-			
-			<div class="contrTask">
-				<div class ="deleteTask">
-					<button class="btn delTask">Clear Finished Tasks</button>
-				</div>
-				<div class ="editTask"> 
-					<button class ="btn edtTask">Edit Tasks</button>
-				</div>
-				<div class ="sortTasks">						<!-- can use JS to sort the list when sort button is clicked -->
-					<button class="btn sortTask">Sort Alphabetically</button>
-				</div>	
-			</div>
-	</div>
-	
-	
-	
-	
-	
-	
+
+
 </body>
 </html>
